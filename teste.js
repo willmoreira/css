@@ -13,7 +13,7 @@
             { Id: 5, IdCategoria: 3, Nome: "APPLE" },
             { Id: 6, IdCategoria: 3, Nome: "PROFISSOES DE TI" }]
         //closure pois a funcao categorias interna usa pra fazer o set da option
-        $(document).ready(function () {
+        $(document).ready(function(){
             //Percorre o array de categorias para popular o combo de categorias
             $.each(categorias, function (i, categoria) {
                 //Faz o append (adiciona) cada um dos itens do array como options do select de id combo1
@@ -25,7 +25,7 @@
                 }))
             })
             //Vai ser acionado cada vez que o combo1 tracar de item selecionado
-            $("#combo1").change(function () {
+            $("#combo1").change(function(){
                 //Pegando o novo valor selecionado no combo
                 var categoria = $(this).val()
                 carregaCombo2(categoria);
@@ -39,12 +39,12 @@
             $("#combo2").val()
         })
  
-        function carregaCombo2(categoria) {
+        function carregaCombo2(categoria){
             //Fazer um filtro dentro do array de categorias com base no Id da Categoria selecionada no combo1
             var subCategoriasFiltradas = $.grep(subCategorias, function (e) { return e.IdCategoria == categoria; });
             //Faz o append (adiciona) cada um dos itens do array filtrado no combo2
             $("#combo2").html('<option>CATEGORIA</option>');
-            $.each(subCategoriasFiltradas, function (i, subcategoria) {
+            $.each(subCategoriasFiltradas, function(i, subcategoria){
                 $("#combo2").append($('<option>', {
                     value: subcategoria.Id, //Id do objeto subcategoria
                     text: subcategoria.Nome //Nome da Subcategoria
