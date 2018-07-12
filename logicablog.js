@@ -32,6 +32,9 @@ window.onload=function(){
     var x = document.getElementById('demo3');
     x.addEventListener("mouseover", function(){mudarCor('demo3');}, false);
     x.addEventListener("mouseout", function(){voltaCor('demo3');}, false);
+     var x = document.getElementById('demo4');
+    x.addEventListener("mouseover", function(){mudarCor('demo4');}, false);
+    x.addEventListener("mouseout", function(){voltaCor('demo4');}, false);
 };
 
 $(function(){
